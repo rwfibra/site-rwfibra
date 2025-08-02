@@ -13,9 +13,9 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        /* FUNDO DA SEÇÃO PRINCIPAL ATUALIZADO */
+        /* FUNDO DO CARROSSEL ATUALIZADO PARA .PNG */
         .hero-background {
-            background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.jpg');
+            background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.png');
             background-size: cover;
             background-position: center;
         }
@@ -354,9 +354,12 @@
             textSlides.forEach((slide, i) => {
                 slide.style.opacity = i === index ? '1' : '0';
             });
-            imageSlides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-            });
+            // Verifica se existem imagens para o carrossel antes de tentar manipulá-las
+            if (imageSlides.length > 0) {
+                imageSlides.forEach((slide, i) => {
+                    slide.style.opacity = i === index ? '1' : '0';
+                });
+            }
         }
 
         function nextSlide() {
@@ -364,10 +367,14 @@
             showSlide(currentSlide);
         }
 
-        // Inicia o carrossel
-        setInterval(nextSlide, 5000); // Muda a cada 5 segundos
+        // Inicia o carrossel apenas se houver slides de texto
+        if (textSlides.length > 1) {
+            setInterval(nextSlide, 5000); // Muda a cada 5 segundos
+        }
 
     </script>
 
 </body>
 </html>
+
+
