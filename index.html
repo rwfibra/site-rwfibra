@@ -13,7 +13,7 @@
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-        /* FUNDO DO CARROSSEL ATUALIZADO PARA USAR O ARQUIVO LOCAL */
+        /* FUNDO DA SEÇÃO PRINCIPAL ATUALIZADO */
         .hero-background {
             background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.jpg');
             background-size: cover;
@@ -23,10 +23,6 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
-        }
-        /* Estilos para o carrossel */
-        .slide-text, .slide-image {
-            transition: opacity 1s ease-in-out;
         }
     </style>
 </head>
@@ -85,33 +81,15 @@
             </div>
         </header>
 
-        <!-- SEÇÃO HERO COM CARROSSEL -->
+        <!-- SEÇÃO HERO SIMPLIFICADA -->
         <main class="hero-background text-white">
-            <div class="container mx-auto grid lg:grid-cols-2 items-center gap-8 px-4 py-16 md:py-24 md:px-8 lg:px-16">
-                <div class="text-center lg:text-left z-10">
-                    <!-- Container do Carrossel de Texto -->
-                    <div id="text-slider" class="relative h-48 md:h-56 mb-8">
-                        <!-- Slide de Texto 1 -->
-                        <div class="slide-text absolute inset-0 opacity-100">
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">A melhor internet da cidade, agora na sua casa.</h1>
-                            <p class="text-lg md:text-xl text-blue-200 max-w-lg mx-auto lg:mx-0">Planos de ultravelocidade com 100% Fibra Óptica, Wi-Fi e Instalação Grátis.</p>
-                        </div>
-                        <!-- Slide de Texto 2 -->
-                        <div class="slide-text absolute inset-0 opacity-0">
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">A diversão nunca acaba com a nossa TV.</h1>
-                            <p class="text-lg md:text-xl text-blue-200 max-w-lg mx-auto lg:mx-0">Assista tudo que quiser, quando quiser. Os melhores filmes, séries e canais ao vivo.</p>
-                        </div>
-                    </div>
+            <div class="container mx-auto grid grid-cols-1 items-center justify-center gap-8 px-4 py-24 md:py-32 lg:py-40">
+                <div class="text-center z-10">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-4">A melhor internet da cidade, agora na sua casa.</h1>
+                    <p class="text-lg md:text-xl text-blue-200 max-w-3xl mx-auto mb-8">Planos de ultravelocidade com 100% Fibra Óptica, Wi-Fi e Instalação Grátis.</p>
                     <a href="#nossos-planos" class="bg-blue-600 text-white font-bold text-lg py-4 px-8 rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg inline-block">
                         Conhecer Planos
                     </a>
-                </div>
-                <!-- Container do Carrossel de Imagem -->
-                <div id="image-slider" class="hidden lg:flex justify-center items-center relative h-80 w-full">
-                    <!-- Slide de Imagem 1 -->
-                    <img src="slide-1.jpeg" alt="Ilustração de tecnologia de fibra óptica de alta velocidade" class="slide-image absolute w-full h-full object-cover opacity-100 rounded-lg">
-                    <!-- Slide de Imagem 2 -->
-                    <img src="slide-2.jpeg" alt="Família feliz assistindo TV com a RW Fibra" class="slide-image absolute w-full h-full object-cover opacity-0 rounded-lg">
                 </div>
             </div>
         </main>
