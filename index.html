@@ -14,7 +14,7 @@
             scroll-behavior: smooth;
         }
         .hero-background {
-            background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.png');
+            background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('https://placehold.co/1920x1080/001446/FFFFFF?text=Fundo+Abstrato');
             background-size: cover;
             background-position: center;
         }
@@ -23,11 +23,15 @@
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
+        /* Estilo para o modal */
+        .modal-backdrop {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
 
-    <!-- CABEÇALHO (agora fora das páginas para ser constante) -->
+    <!-- CABEÇALHO -->
     <header class="bg-white shadow-md sticky top-0 z-40">
         <div class="container mx-auto flex justify-between items-center p-4 md:px-8 lg:px-16">
             <a href="#" id="logo-link" class="flex flex-col items-start leading-none cursor-pointer">
@@ -157,14 +161,14 @@
                             <p class="mt-4 text-gray-600">Nascemos do desejo de levar internet de alta velocidade e qualidade para regiões que merecem uma conexão de verdade. Na RW Fibra, acreditamos que o acesso à internet é uma ferramenta essencial para o desenvolvimento, educação e lazer. Nossa missão é simples: oferecer a melhor experiência de conexão, com atendimento próximo e humanizado.</p>
                             <h3 class="text-2xl font-bold text-gray-900 mt-8">Nossos Valores</h3>
                             <ul class="mt-4 space-y-2 text-gray-600 list-disc list-inside">
-                                <li>**Qualidade:** Utilizamos 100% fibra óptica de ponta a ponta.</li>
-                                <li>**Transparência:** Planos claros, sem surpresas na fatura.</li>
-                                <li>**Proximidade:** Somos da sua região e entendemos sua necessidade.</li>
-                                <li>**Suporte:** Equipe técnica ágil e pronta para ajudar.</li>
+                                <li><strong>Qualidade:</strong> Utilizamos 100% fibra óptica de ponta a ponta.</li>
+                                <li><strong>Transparência:</strong> Planos claros, sem surpresas na fatura.</li>
+                                <li><strong>Proximidade:</strong> Somos da sua região e entendemos sua necessidade.</li>
+                                <li><strong>Suporte:</strong> Equipe técnica ágil e pronta para ajudar.</li>
                             </ul>
                         </div>
                         <div class="flex justify-center">
-                            <img class="rounded-2xl shadow-lg" src="https://placehold.co/500x400/e0e7ff/3730a3?text=Nossa+Equipe" alt="Foto da equipe RW Fibra">
+                            <img class="rounded-2xl shadow-lg" src="https://placehold.co/500x400/e0e7ff/3730a3?text=Nossa+Equipe" alt="Foto da equipe RW Fibra" onerror="this.onerror=null;this.src='https://placehold.co/500x400/e0e7ff/3730a3?text=Erro+ao+carregar+imagem';">
                         </div>
                     </div>
                 </div>
@@ -175,118 +179,262 @@
         </div>
     </div>
 
-    <!-- RODAPÉ FLUTUANTE COM CURVA -->
-    <footer id="floating-footer" class="fixed bottom-0 left-0 right-0 bg-blue-900/90 backdrop-blur-sm text-white z-50 transform translate-y-full transition-transform duration-500">
-        <div class="footer-curve"></div>
-        <div class="relative container mx-auto flex justify-between items-center p-4">
-            <div class="flex-grow text-center md:text-left">
-                <div class="flex flex-col md:flex-row justify-center md:justify-start items-center space-y-4 md:space-y-0 md:space-x-6">
-                    <!-- WhatsApp Link com Texto -->
-                    <a href="https://wa.me/5511953872843" target="_blank" class="flex items-center space-x-2 text-white hover:text-green-300 transition-colors" title="Fale no WhatsApp">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" class="w-8 h-8">
-                        <span class="font-semibold text-lg">Assine Já</span>
-                    </a>
-                    <!-- Instagram Link com Texto -->
-                    <a href="https://www.instagram.com/rwfibra" target="_blank" class="flex items-center space-x-2 text-white hover:text-pink-400 transition-colors" title="Siga-nos no Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg>
-                        <span class="font-semibold text-lg">@rwfibra</span>
-                    </a>
+    <!-- RODAPÉ FLUTUante COM VERIFICADOR DE COBERTURA -->
+    <footer id="floating-footer" class="relative bottom-0 left-0 right-0 bg-blue-900/95 backdrop-blur-sm text-white z-30 pt-8">
+        <div class="relative container mx-auto px-4">
+            
+            <!-- INÍCIO DO VERIFICADOR DE COBERTURA NO RODAPÉ -->
+            <div class="max-w-2xl mx-auto bg-white/10 p-6 rounded-2xl shadow-lg mb-8">
+                <h3 class="text-xl font-bold text-white mb-4 text-center">Ainda não é cliente? Consulte sua cobertura!</h3>
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="text" id="cep-input" placeholder="Digite seu CEP (ex: 00000-000)" class="w-full px-4 py-3 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-sky-400">
+                    <button id="verificar-cep-btn" class="w-full sm:w-auto bg-sky-500 text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-600 transition duration-300 shadow-md">
+                        Verificar
+                    </button>
                 </div>
             </div>
-            <div class="mt-4 md:mt-0 flex-shrink-0">
-                <img src="mascote.png" alt="Mascote da RW Fibra" class="h-32 md:h-40 mx-auto">
+            <!-- FIM DO VERIFICADOR DE COBERTURA -->
+
+            <div class="flex justify-between items-center p-4">
+                <div class="flex-grow text-center md:text-left">
+                    <div class="flex flex-col md:flex-row justify-center md:justify-start items-center space-y-4 md:space-y-0 md:space-x-6">
+                        <a href="https://wa.me/5511953872843" target="_blank" class="flex items-center space-x-2 text-white hover:text-green-300 transition-colors" title="Fale no WhatsApp">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" class="w-8 h-8" onerror="this.onerror=null;this.src='https://placehold.co/32x32/ffffff/000000?text=W';">
+                            <span class="font-semibold text-lg">Assine Já</span>
+                        </a>
+                        <a href="https://www.instagram.com/rwfibra" target="_blank" class="flex items-center space-x-2 text-white hover:text-pink-400 transition-colors" title="Siga-nos no Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg>
+                            <span class="font-semibold text-lg">@rwfibra</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-4 md:mt-0 flex-shrink-0">
+                    <img src="https://placehold.co/160x160/1e3a8a/ffffff?text=Mascote" alt="Mascote da RW Fibra" class="h-32 md:h-40 mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/160x160/1e3a8a/ffffff?text=Mascote';">
+                </div>
             </div>
         </div>
-        <!-- Copyright -->
-        <div class="text-center text-xs text-gray-400 pb-2 pt-2 border-t border-gray-700/50">
+        <div class="text-center text-xs text-gray-400 pb-2 pt-2 border-t border-gray-700/50 mt-4">
             &copy; 2024 RW Fibra. Todos os direitos reservados.
         </div>
     </footer>
 
+    <!-- INÍCIO DO MODAL DE RESULTADO DE COBERTURA -->
+    <div id="cobertura-modal" class="hidden fixed inset-0 bg-black bg-opacity-60 z-50 flex justify-center items-center p-4 modal-backdrop">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center transform transition-all scale-95 opacity-0" id="modal-content">
+            <div id="modal-icon" class="mx-auto mb-4">
+                <!-- Ícone será inserido via JS -->
+            </div>
+            <h3 id="modal-title" class="text-2xl font-bold text-gray-900 mb-2"></h3>
+            <p id="modal-message" class="text-gray-600 mb-6"></p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                <button id="modal-action-btn" class="w-full sm:w-auto text-white font-bold py-3 px-6 rounded-lg transition duration-300"></button>
+                <button id="modal-close-btn" class="w-full sm:w-auto bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition duration-300">Fechar</button>
+            </div>
+        </div>
+    </div>
+    <!-- FIM DO MODAL -->
+
+
     <script>
-        // --- LÓGICA DE NAVEGAÇÃO ENTRE PÁGINAS ---
-        const paginaPrincipal = document.getElementById('pagina-principal');
-        const paginaTv = document.getElementById('pagina-tv');
-        const paginaQuemSomos = document.getElementById('pagina-quem-somos');
+        document.addEventListener('DOMContentLoaded', () => {
 
-        const btnsVoltar = document.querySelectorAll('.btn-voltar');
-        const btnConhecaTv = document.getElementById('btn-conheca-tv');
-        const linkQuemSomos = document.getElementById('quem-somos-link');
-        const linkLogo = document.getElementById('logo-link');
-        const linkHome = document.getElementById('home-link');
+            // --- LÓGICA DE NAVEGAÇÃO ENTRE PÁGINAS ---
+            const paginaPrincipal = document.getElementById('pagina-principal');
+            const paginaTv = document.getElementById('pagina-tv');
+            const paginaQuemSomos = document.getElementById('pagina-quem-somos');
+            const btnsVoltar = document.querySelectorAll('.btn-voltar');
+            const btnConhecaTv = document.getElementById('btn-conheca-tv');
+            const linkQuemSomos = document.getElementById('quem-somos-link');
+            const linkLogo = document.getElementById('logo-link');
+            const linkHome = document.getElementById('home-link');
 
-        const hideAllPages = () => {
-            paginaPrincipal.classList.add('hidden');
-            paginaTv.classList.add('hidden');
-            paginaQuemSomos.classList.add('hidden');
-        }
+            const hideAllPages = () => {
+                paginaPrincipal.classList.add('hidden');
+                paginaTv.classList.add('hidden');
+                paginaQuemSomos.classList.add('hidden');
+            }
 
-        const mostrarPrincipal = () => {
-            hideAllPages();
-            paginaPrincipal.classList.remove('hidden');
-            window.scrollTo(0, 0);
-        };
-        
-        const mostrarPaginaTv = () => {
-            hideAllPages();
-            paginaTv.classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
+            const mostrarPrincipal = () => {
+                hideAllPages();
+                paginaPrincipal.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            };
+            
+            const mostrarPaginaTv = () => {
+                hideAllPages();
+                paginaTv.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
 
-        const mostrarPaginaQuemSomos = () => {
-            hideAllPages();
-            paginaQuemSomos.classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
+            const mostrarPaginaQuemSomos = (e) => {
+                if(e) e.preventDefault();
+                hideAllPages();
+                paginaQuemSomos.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
 
-        btnsVoltar.forEach(btn => btn.addEventListener('click', mostrarPrincipal));
-        btnConhecaTv.addEventListener('click', mostrarPaginaTv);
-        linkQuemSomos.addEventListener('click', (e) => { e.preventDefault(); mostrarPaginaQuemSomos(); });
-        linkLogo.addEventListener('click', (e) => { e.preventDefault(); mostrarPrincipal(); });
-        linkHome.addEventListener('click', (e) => { e.preventDefault(); mostrarPrincipal(); });
+            btnsVoltar.forEach(btn => btn.addEventListener('click', mostrarPrincipal));
+            btnConhecaTv.addEventListener('click', mostrarPaginaTv);
+            linkQuemSomos.addEventListener('click', mostrarPaginaQuemSomos);
+            linkLogo.addEventListener('click', (e) => { e.preventDefault(); mostrarPrincipal(); });
+            linkHome.addEventListener('click', (e) => { e.preventDefault(); mostrarPrincipal(); });
 
+            // --- LÓGICA DO VERIFICADOR DE COBERTURA ---
+            const cepsAtendidos = [
+                "03382070", "03382150", "03388000", "03388010", "03388020", "03388030", "03388040", 
+                "03388050", "03388060", "03388070", "03388080", "03388090", "03388100", "03388110", 
+                "03388120", "03388130", "03388140", "03388150", "03389000", "03389010", "03389020", 
+                "03389030", "03389040", "03389050", "03389060", "03389070", "03389080", "03389090", 
+                "03389100", "03389110", "03389120", "03390000", "03390001", "03390010", "03390020", 
+                "03390030", "03390040", "03390045", "03390050", "03390060", "03390070", "03390080", 
+                "03390090"
+            ];
 
-        // --- LÓGICA GERAL DA PÁGINA ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
+            const cepInput = document.getElementById('cep-input');
+            const verificarBtn = document.getElementById('verificar-cep-btn');
+            const modal = document.getElementById('cobertura-modal');
+            const modalContent = document.getElementById('modal-content');
+            const modalIcon = document.getElementById('modal-icon');
+            const modalTitle = document.getElementById('modal-title');
+            const modalMessage = document.getElementById('modal-message');
+            const modalActionBtn = document.getElementById('modal-action-btn');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            // Máscara para o CEP
+            cepInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                value = value.replace(/^(\d{5})(\d)/, '$1-$2');
+                e.target.value = value.slice(0, 9);
+            });
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                }, 10);
+            };
+
+            const closeModal = () => {
+                modal.classList.add('opacity-0');
+                modalContent.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            };
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
                 }
             });
-        });
 
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('svg');
+            const showResult = (type, cep) => {
+                let iconHtml, title, message, actionText, actionClass, actionFn;
 
-                if (answer.style.maxHeight) {
-                    answer.style.maxHeight = null;
-                    icon.style.transform = 'rotate(0deg)';
+                if (type === 'success') {
+                    iconHtml = `<svg class="w-16 h-16 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                    title = 'Ótima notícia!';
+                    message = `Atendemos no CEP ${cep}. Venha fazer parte da família RW Fibra e navegue com a melhor velocidade da região.`;
+                    actionText = 'Conhecer Planos';
+                    actionClass = 'bg-green-500 hover:bg-green-600';
+                    actionFn = () => {
+                        closeModal();
+                        document.getElementById('nossos-planos').scrollIntoView({ behavior: 'smooth' });
+                    };
+                } else if (type === 'offer_tv') {
+                    iconHtml = `<svg class="w-16 h-16 text-sky-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.55a2.5 2.5 0 010 4l-4.55 2.5M3 8v8a2 2 0 002 2h4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                    title = 'Quase lá!';
+                    message = `Ainda não chegamos com a fibra no CEP ${cep}, mas temos uma ótima opção de TV para você!`;
+                    actionText = 'Conhecer TV';
+                    actionClass = 'bg-sky-500 hover:bg-sky-600';
+                    actionFn = () => {
+                        closeModal();
+                        mostrarPaginaTv();
+                    };
+                } else { // error
+                    iconHtml = `<svg class="w-16 h-16 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                    title = 'CEP Inválido';
+                    message = 'Por favor, digite um CEP válido com 8 dígitos para que possamos verificar a cobertura.';
+                    actionText = 'Tentar Novamente';
+                    actionClass = 'bg-red-500 hover:bg-red-600';
+                    actionFn = () => {
+                        closeModal();
+                        cepInput.focus();
+                    };
+                }
+
+                modalIcon.innerHTML = iconHtml;
+                modalTitle.textContent = title;
+                modalMessage.textContent = message;
+                modalActionBtn.textContent = actionText;
+                modalActionBtn.className = `w-full sm:w-auto text-white font-bold py-3 px-6 rounded-lg transition duration-300 ${actionClass}`;
+                
+                // Remove o listener antigo para evitar múltiplos disparos
+                const newActionBtn = modalActionBtn.cloneNode(true);
+                modalActionBtn.parentNode.replaceChild(newActionBtn, modalActionBtn);
+                newActionBtn.addEventListener('click', actionFn);
+
+                openModal();
+            };
+
+
+            verificarBtn.addEventListener('click', () => {
+                const cepFormatado = cepInput.value;
+                const cep = cepFormatado.replace(/\D/g, '');
+
+                if (cep.length !== 8) {
+                    showResult('error');
+                    return;
+                }
+
+                if (cepsAtendidos.includes(cep)) {
+                    showResult('success', cepFormatado);
                 } else {
+                    showResult('offer_tv', cepFormatado);
+                }
+            });
+
+
+            // --- LÓGICA GERAL DA PÁGINA ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('svg');
+                    const isOpen = answer.style.maxHeight;
+
+                    // Fecha todos os outros
                     document.querySelectorAll('.faq-answer').forEach(ans => {
                         ans.style.maxHeight = null;
                         ans.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
                     });
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                    icon.style.transform = 'rotate(180deg)';
-                }
+                    
+                    // Abre ou fecha o clicado
+                    if (isOpen) {
+                        answer.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                        icon.style.transform = 'rotate(180deg)';
+                    }
+                });
             });
-        });
 
-        // --- LÓGICA DO RODAPÉ FLUTUANTE ---
-        const floatingFooter = document.getElementById('floating-footer');
-        window.addEventListener('scroll', () => {
-            // Verifica se o usuário rolou até perto do final da página
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) { // Aparece 100px antes do final
-                floatingFooter.classList.remove('translate-y-full');
-            } else {
-                floatingFooter.classList.add('translate-y-full');
-            }
+            // --- LÓGICA DO RODAPÉ ---
+            // O rodapé agora não é mais flutuante, então a lógica de mostrar/esconder foi removida.
         });
     </script>
 
