@@ -12,7 +12,6 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            padding-bottom: 80px; /* Adiciona espaço no final para a barra fixa não cobrir o conteúdo */
         }
         .hero-background {
             background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.png');
@@ -23,6 +22,17 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
+        }
+        /* Estilo para a curva do rodapé */
+        .footer-curve::before {
+            content: '';
+            position: absolute;
+            bottom: 99%; /* Um pouco acima para garantir a sobreposição */
+            left: 0;
+            width: 100%;
+            height: 80px; /* Altura da curva */
+            background-color: #1e3a8a; /* Azul escuro do rodapé */
+            clip-path: ellipse(100% 100% at 50% 100%);
         }
     </style>
 </head>
@@ -125,16 +135,8 @@
         </section>
 
         <footer class="bg-white py-10 md:py-12">
-            <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-                <div class="flex-grow text-center md:text-left mb-6 md:mb-0">
-                    <div class="flex justify-center md:justify-start items-center space-x-4">
-                        <a href="https://wa.me/5511953872843" target="_blank" class="flex-shrink-0" title="Fale no WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" class="w-10 h-10 hover:scale-110 transition-transform"></a>
-                        <a href="https://www.instagram.com/rwfibra" target="_blank" class="flex-shrink-0 text-gray-600 hover:text-pink-600" title="Siga-nos no Instagram"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg></a>
-                    </div>
-                </div>
-                <div class="mt-8 md:mt-0 flex-shrink-0">
-                    <img src="mascote.png" alt="Mascote da RW Fibra" class="h-32 md:h-48 mx-auto">
-                </div>
+            <div class="container mx-auto px-4 text-center">
+                 <p class="text-sm text-gray-500">© 2024 RW Fibra Telecom. Todos os direitos reservados.</p>
             </div>
         </footer>
     </div>
@@ -193,14 +195,15 @@
         </div>
     </div>
 
-    <!-- FAIXA FIXA NO RODAPÉ -->
-    <div id="fixed-bar" class="fixed bottom-0 left-0 right-0 bg-gray-800/90 backdrop-blur-sm text-white p-3 z-50">
-        <div class="container mx-auto flex justify-center md:justify-between items-center">
-            <p class="font-semibold hidden md:block">Gostou dos nossos planos? Fale conosco agora!</p>
-            <a href="https://wa.me/5511953872843?text=Olá!%20Tenho%20interesse%20nos%20planos%20da%20RW%20Fibra." target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg flex items-center mx-auto md:mx-0">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg>
-                Contratar via WhatsApp
-            </a>
+    <!-- FAIXA FLUTUANTE DE CONTATO -->
+    <div id="floating-bar" class="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900 to-blue-700 text-white z-50 transform translate-y-full transition-transform duration-500">
+        <div class="footer-curve"></div>
+        <div class="relative container mx-auto flex flex-col items-center p-4 text-center">
+            <div class="flex space-x-6 mb-3">
+                 <a href="https://wa.me/5511953872843" target="_blank" class="hover:text-sky-300 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/></svg></a>
+                 <a href="https://www.instagram.com/rwfibra" target="_blank" class="hover:text-sky-300 transition-colors"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg></a>
+            </div>
+            <p class="text-xs text-blue-200 mt-2">© 2024 RW Fibra Telecom. Todos os direitos reservados.</p>
         </div>
     </div>
 
@@ -278,10 +281,22 @@
                 }
             });
         });
+
+        // --- LÓGICA DA FAIXA FLUTUANTE ---
+        const floatingBar = document.getElementById('floating-bar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Aparece depois de rolar 300px
+                floatingBar.classList.remove('translate-y-full');
+            } else {
+                floatingBar.classList.add('translate-y-full');
+            }
+        });
     </script>
 
 </body>
 </html>
+
+
 
 
 
