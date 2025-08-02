@@ -12,6 +12,7 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            overflow-x: hidden; /* Previne scroll horizontal causado pelas animações */
         }
         .hero-background {
             background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.png');
@@ -23,9 +24,19 @@
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
-        /* Estilo para o modal */
         .modal-backdrop {
             transition: opacity 0.3s ease;
+        }
+        /* Estilos para animação de scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition-delay: var(--animation-delay, 0s);
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -72,24 +83,24 @@
 
         <section id="nossos-planos" class="bg-gray-50 py-16 md:py-24">
             <div class="container mx-auto px-4 md:px-8">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 animate-on-scroll">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Conheça Nossos Planos</h2>
                     <p class="mt-4 text-lg text-gray-600">Escolha o plano perfeito para você e sua família.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-sky-500">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-sky-500 animate-on-scroll" style="--animation-delay: 0.1s;">
                         <div class="flex-grow"><h3 class="text-2xl font-bold text-gray-900">200 MEGA</h3><p class="text-gray-500 mt-2">✅ Ideal para navegar e redes sociais.</p><div class="my-6"><span class="text-5xl font-extrabold text-gray-900">R$ 49</span><span class="text-2xl font-bold text-gray-900">,90</span><span class="text-gray-500">/mês*</span></div><p class="text-xs text-gray-500">*Valor promocional nos 2 primeiros meses. Após, R$ 79,90/mês.</p></div>
                         <a href="https://wa.me/5511953872843?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20200%20Mega." target="_blank" class="mt-6 w-full bg-sky-500 text-white font-bold py-3 rounded-lg hover:bg-sky-600 transition-colors text-center">Contratar</a>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-blue-500">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-blue-500 animate-on-scroll" style="--animation-delay: 0.2s;">
                         <div class="flex-grow"><h3 class="text-2xl font-bold text-gray-900">300 MEGA</h3><p class="text-gray-500 mt-2">✅ Perfeito para quem usa vários dispositivos.</p><div class="my-6"><span class="text-5xl font-extrabold text-gray-900">R$ 79</span><span class="text-2xl font-bold text-gray-900">,90</span><span class="text-gray-500">/mês</span></div></div>
                         <a href="https://wa.me/5511953872843?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20300%20Mega." target="_blank" class="mt-6 w-full bg-blue-500 text-white font-bold py-3 rounded-lg hover:bg-blue-600 transition-colors text-center">Contratar</a>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-indigo-500">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-indigo-500 animate-on-scroll" style="--animation-delay: 0.3s;">
                         <div class="flex-grow"><h3 class="text-2xl font-bold text-gray-900">400 MEGA</h3><p class="text-gray-500 mt-2">✅ Ótima opção para home office e gamers.</p><div class="my-6"><span class="text-5xl font-extrabold text-gray-900">R$ 100</span><span class="text-2xl font-bold text-gray-900">,00</span><span class="text-gray-500">/mês</span></div></div>
                         <a href="https://wa.me/5511953872843?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20400%20Mega." target="_blank" class="mt-6 w-full bg-indigo-500 text-white font-bold py-3 rounded-lg hover:bg-indigo-600 transition-colors text-center">Contratar</a>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-amber-500 ring-2 ring-amber-500">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-amber-500 ring-2 ring-amber-500 animate-on-scroll" style="--animation-delay: 0.4s;">
                         <div class="flex-grow"><p class="text-sm font-bold text-amber-600 uppercase">MAIS POPULAR</p><h3 class="text-2xl font-bold text-gray-900">500 MEGA</h3><p class="text-gray-500 mt-2">✅ Família conectada + TV com os melhores canais.</p><div class="my-6"><span class="text-5xl font-extrabold text-gray-900">R$ 120</span><span class="text-2xl font-bold text-gray-900">,00</span><span class="text-gray-500">/mês</span></div><p class="font-semibold text-gray-700">+ TV Grátis</p></div>
                         <a href="https://wa.me/5511953872843?text=Olá!%20Tenho%20interesse%20no%20plano%20de%20500%20Mega%20com%20TV." target="_blank" class="mt-6 w-full bg-amber-500 text-white font-bold py-3 rounded-lg hover:bg-amber-600 transition-colors text-center">Contratar</a>
                     </div>
@@ -110,16 +121,16 @@
 
         <section id="faq" class="bg-white py-16 md:py-24">
             <div class="container mx-auto px-4 md:px-8 max-w-4xl">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 animate-on-scroll">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Perguntas Frequentes</h2>
                     <p class="mt-4 text-lg text-gray-600">Tire suas dúvidas sobre nossos serviços.</p>
                 </div>
                 <div class="space-y-4">
-                    <div class="bg-gray-50 rounded-lg"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">O que é internet Fibra Óptica?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">A fibra óptica é a tecnologia de transmissão de dados mais rápida e estável do mercado. Ela utiliza pulsos de luz para enviar informações através de cabos finos de vidro, o que garante uma conexão com menos interferência e muito mais velocidade em comparação com tecnologias mais antigas, como a internet a rádio ou via cabo de cobre.</p></div></div>
-                    <div class="bg-gray-50 rounded-lg"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Tem taxa de instalação?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Não! Em todos os nossos planos a instalação é totalmente gratuita. Nossa equipe técnica vai até sua casa ou empresa e deixa tudo funcionando sem nenhum custo adicional.</p></div></div>
-                    <div class="bg-gray-50 rounded-lg"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Preciso pagar por fidelidade?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Não! Na RW Fibra você é livre. Nossos planos não possuem contrato de fidelidade, garantindo a você a liberdade de escolher o melhor, sem amarras.</p></div></div>
-                    <div class="bg-gray-50 rounded-lg"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Como posso pagar minha fatura?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Aceitamos pagamento via PIX (QR Code) e boleto bancário. Você pode acessar sua fatura a qualquer momento através da nossa <a href="https://rwfibra.sgp.tsmx.com.br/accounts/central/login" target="_blank" class="text-blue-600 hover:underline">Central do Assinante</a>.</p></div></div>
-                    <div class="bg-gray-50 rounded-lg"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Como funciona o serviço de TV?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Nossa TV é um aplicativo moderno que funciona diretamente na sua Smart TV (com sistema Google TV ou Android TV). Se a sua TV não for compatível, não tem problema! Você pode instalar o aplicativo em qualquer TV Box ou dispositivo similar para aproveitar todos os canais, filmes e séries.</p></div></div>
+                    <div class="bg-gray-50 rounded-lg animate-on-scroll" style="--animation-delay: 0.1s;"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">O que é internet Fibra Óptica?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">A fibra óptica é a tecnologia de transmissão de dados mais rápida e estável do mercado. Ela utiliza pulsos de luz para enviar informações através de cabos finos de vidro, o que garante uma conexão com menos interferência e muito mais velocidade em comparação com tecnologias mais antigas, como a internet a rádio ou via cabo de cobre.</p></div></div>
+                    <div class="bg-gray-50 rounded-lg animate-on-scroll" style="--animation-delay: 0.2s;"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Tem taxa de instalação?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Não! Em todos os nossos planos a instalação é totalmente gratuita. Nossa equipe técnica vai até sua casa ou empresa e deixa tudo funcionando sem nenhum custo adicional.</p></div></div>
+                    <div class="bg-gray-50 rounded-lg animate-on-scroll" style="--animation-delay: 0.3s;"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Preciso pagar por fidelidade?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Não! Na RW Fibra você é livre. Nossos planos não possuem contrato de fidelidade, garantindo a você a liberdade de escolher o melhor, sem amarras.</p></div></div>
+                    <div class="bg-gray-50 rounded-lg animate-on-scroll" style="--animation-delay: 0.4s;"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Como posso pagar minha fatura?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Aceitamos pagamento via PIX (QR Code) e boleto bancário. Você pode acessar sua fatura a qualquer momento através da nossa <a href="https://rwfibra.sgp.tsmx.com.br/accounts/central/login" target="_blank" class="text-blue-600 hover:underline">Central do Assinante</a>.</p></div></div>
+                    <div class="bg-gray-50 rounded-lg animate-on-scroll" style="--animation-delay: 0.5s;"><button class="faq-question flex justify-between items-center w-full p-6 text-left"><span class="text-lg font-semibold text-gray-800">Como funciona o serviço de TV?</span><svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button><div class="faq-answer px-6 pb-6"><p class="text-gray-600">Nossa TV é um aplicativo moderno que funciona diretamente na sua Smart TV (com sistema Google TV ou Android TV). Se a sua TV não for compatível, não tem problema! Você pode instalar o aplicativo em qualquer TV Box ou dispositivo similar para aproveitar todos os canais, filmes e séries.</p></div></div>
                 </div>
             </div>
         </section>
@@ -371,7 +382,6 @@
                 modalActionBtn.textContent = actionText;
                 modalActionBtn.className = `w-full sm:w-auto text-white font-bold py-3 px-6 rounded-lg transition duration-300 ${actionClass}`;
                 
-                // Remove o listener antigo para evitar múltiplos disparos
                 const newActionBtn = modalActionBtn.cloneNode(true);
                 modalActionBtn.parentNode.replaceChild(newActionBtn, modalActionBtn);
                 newActionBtn.addEventListener('click', actionFn);
@@ -416,13 +426,11 @@
                     const icon = question.querySelector('svg');
                     const isOpen = answer.style.maxHeight;
 
-                    // Fecha todos os outros
                     document.querySelectorAll('.faq-answer').forEach(ans => {
                         ans.style.maxHeight = null;
                         ans.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
                     });
                     
-                    // Abre ou fecha o clicado
                     if (isOpen) {
                         answer.style.maxHeight = null;
                         icon.style.transform = 'rotate(0deg)';
@@ -433,8 +441,20 @@
                 });
             });
 
-            // --- LÓGICA DO RODAPÉ ---
-            // O rodapé agora não é mais flutuante, então a lógica de mostrar/esconder foi removida.
+            // --- LÓGICA DE ANIMAÇÃO AO ROLAR ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+            elementsToAnimate.forEach(el => observer.observe(el));
         });
     </script>
 
