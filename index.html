@@ -312,12 +312,62 @@
                 .catch(error => console.error('Erro ao buscar CEP:', error));
         });
 
+        // --- LÓGICA DE SUBMISSÃO DO FORMULÁRIO PARA WHATSAPP ---
         formContratacao.addEventListener('submit', (e) => {
             e.preventDefault();
-            console.log('Dados do formulário:', new FormData(formContratacao));
-            formContratacao.classList.add('hidden');
-            successMessage.classList.remove('hidden');
-            window.scrollTo(0, 0);
+            
+            // Coleta dos dados do formulário
+            const nome = document.getElementById('nome').value;
+            const cpf = document.getElementById('cpf').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const cep = document.getElementById('cep').value;
+            const rua = document.getElementById('rua').value;
+            const numero = document.getElementById('numero').value;
+            const complemento = document.getElementById('complemento').value;
+            const bairro = document.getElementById('bairro').value;
+            const cidade = document.getElementById('cidade').value;
+            const planoSelect = document.getElementById('plano');
+            const planoTexto = planoSelect.options[planoSelect.selectedIndex].text;
+            const vencimento = document.getElementById('vencimento').value;
+
+            // Formatação da mensagem para o WhatsApp
+            const mensagem = `
+*NOVO CADASTRO PELO SITE*
+
+*DADOS PESSOAIS*
+*Nome:* ${nome}
+*CPF:* ${cpf}
+*E-mail:* ${email}
+*Telefone:* ${telefone}
+
+*ENDEREÇO DE INSTALAÇÃO*
+*CEP:* ${cep}
+*Endereço:* ${rua}, Nº ${numero}
+*Complemento:* ${complemento}
+*Bairro:* ${bairro}
+*Cidade:* ${cidade}
+
+*PLANO ESCOLHIDO*
+*Plano:* ${planoTexto}
+*Vencimento da Fatura:* ${vencimento}
+            `;
+
+            // Número de telefone para onde a mensagem será enviada (coloque o seu número com o código do país)
+            const numeroWhatsApp = '5511953872843';
+
+            // Criação do link do WhatsApp
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+            // Redireciona o usuário para o WhatsApp
+            window.open(linkWhatsApp, '_blank');
+            
+            // Opcional: Mostrar mensagem de sucesso na página após um pequeno delay
+            setTimeout(() => {
+                formContratacao.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }, 1000); // Espera 1 segundo antes de mostrar a mensagem
         });
 
         const faqQuestions = document.querySelectorAll('.faq-question');
@@ -366,3 +416,5 @@
 
 </body>
 </html>
+
+
