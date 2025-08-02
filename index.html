@@ -23,9 +23,6 @@
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
-        .slide-text {
-            transition: opacity 1s ease-in-out;
-        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -74,7 +71,8 @@
                     <a href="#" class="py-2 border-b-2 border-transparent hover:border-blue-600 hover:text-blue-600 transition">Quem Somos</a>
                     <a href="#faq" class="py-2 border-b-2 border-transparent hover:border-blue-600 hover:text-blue-600 transition">Fale Conosco</a>
                 </nav>
-                <a href="https://rwfibra.sgp.tsmx.com.br/accounts/central/login" target="_blank" class="inline-block bg-white text-blue-600 font-bold py-2 px-5 rounded-full hover:bg-gray-100 transition duration-300 shadow-md border-2 border-blue-600 text-sm">
+                <!-- BOTÃO "CENTRAL DO ASSINANTE" COM TAMANHO AJUSTADO PARA CELULAR -->
+                <a href="https://rwfibra.sgp.tsmx.com.br/accounts/central/login" target="_blank" class="inline-block bg-white text-blue-600 font-bold py-1 px-3 text-xs md:py-2 md:px-5 md:text-sm rounded-full hover:bg-gray-100 transition duration-300 shadow-md border-2 border-blue-600">
                     Central do Assinante
                 </a>
             </div>
@@ -124,10 +122,11 @@
             <div class="container mx-auto px-4 md:px-8 text-center">
                  <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Leve a diversão para a sua TV</h2>
                  <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Além da melhor internet, oferecemos um aplicativo de TV com os melhores filmes, séries e canais ao vivo para toda a família.</p>
-                 <a href="https://wa.me/5511953872843?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20serviço%20de%20TV." target="_blank" class="mt-8 bg-indigo-600 text-white font-bold text-lg py-4 px-8 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg inline-flex items-center">
+                 <!-- BOTÃO "CONHEÇA NOSSA TV" CORRIGIDO -->
+                 <button id="btn-conheca-tv" class="mt-8 bg-indigo-600 text-white font-bold text-lg py-4 px-8 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg inline-flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17.25v-10.5l8.25 5.25-8.25 5.25z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     Conheça nossa TV
-                 </a>
+                 </button>
             </div>
         </section>
 
@@ -154,15 +153,68 @@
                         <a href="https://wa.me/5511953872843" target="_blank" class="flex-shrink-0" title="Fale no WhatsApp"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="Ícone do WhatsApp" class="w-10 h-10 hover:scale-110 transition-transform"></a>
                         <a href="https://www.instagram.com/rwfibra" target="_blank" class="flex-shrink-0 text-gray-600 hover:text-pink-600" title="Siga-nos no Instagram"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163m0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44c0-.795-.645-1.44-1.441-1.44z"/></svg></a>
                 </div>
+                <!-- MASCOTE COM TAMANHO AJUSTADO PARA DESKTOP -->
                 <div class="mt-8 md:mt-0">
-                    <!-- NOME DO ARQUIVO DO MASCOTE ATUALIZADO PARA .PNG -->
-                    <img src="mascote.png" alt="Mascote da RW Fibra" class="h-48 mx-auto">
+                    <img src="mascote.png" alt="Mascote da RW Fibra" class="h-32 md:h-48 mx-auto">
                 </div>
             </div>
         </footer>
     </div>
 
+    <!-- PÁGINA DE TV (INICIALMENTE OCULTA) -->
+    <div id="pagina-tv" class="hidden">
+        <div class="bg-gray-100 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-extrabold text-gray-900">Demonstração da Nossa TV</h2>
+                    <p class="mt-2 text-sm text-gray-600">Veja um pouco do que você terá acesso com nosso aplicativo.</p>
+                </div>
+                <div class="bg-white p-4 md:p-8 rounded-2xl shadow-lg text-center">
+                    <video class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" controls autoplay loop muted>
+                        <source src="plano-tv.mp4" type="video/mp4">
+                        Seu navegador não suporta o player de vídeo.
+                    </video>
+                </div>
+                <div class="mt-8 text-center">
+                    <button type="button" class="btn-voltar bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50">Voltar para o Início</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
+        // --- LÓGICA DE NAVEGAÇÃO ENTRE PÁGINAS ---
+        const paginaPrincipal = document.getElementById('pagina-principal');
+        const paginaTv = document.getElementById('pagina-tv');
+        const btnsVoltar = document.querySelectorAll('.btn-voltar');
+        const btnConhecaTv = document.getElementById('btn-conheca-tv');
+
+        const hideAllPages = () => {
+            paginaPrincipal.classList.add('hidden');
+            paginaTv.classList.add('hidden');
+        }
+
+        const mostrarPrincipal = () => {
+            hideAllPages();
+            paginaPrincipal.classList.remove('hidden');
+            window.scrollTo(0, 0);
+        };
+        
+        const mostrarPaginaTv = () => {
+            hideAllPages();
+            paginaTv.classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        btnsVoltar.forEach(btn => {
+            btn.addEventListener('click', mostrarPrincipal);
+        });
+
+        btnConhecaTv.addEventListener('click', mostrarPaginaTv);
+
+
+        // --- LÓGICA GERAL DA PÁGINA ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -193,31 +245,7 @@
                 }
             });
         });
-
-        // --- LÓGICA DO CARROSSEL DE TEXTO ---
-        const textSlides = document.querySelectorAll('.slide-text');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            textSlides.forEach((slide, i) => {
-                slide.style.opacity = i === index ? '1' : '0';
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % textSlides.length;
-            showSlide(currentSlide);
-        }
-
-        // Inicia o carrossel apenas se houver slides de texto
-        if (textSlides.length > 1) {
-            setInterval(nextSlide, 5000); // Muda a cada 5 segundos
-        }
     </script>
 
 </body>
 </html>
-
-
-
-
