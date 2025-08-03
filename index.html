@@ -56,7 +56,7 @@
                 <a href="#" id="home-link" class="py-2 border-b-2 border-blue-600 text-blue-600 cursor-pointer">Home</a>
                 <a href="#nossos-planos" class="py-2 border-b-2 border-transparent hover:border-blue-600 hover:text-blue-600 transition">Nossos Planos</a>
                 <a href="#" id="quem-somos-link" class="py-2 border-b-2 border-transparent hover:border-blue-600 hover:text-blue-600 transition cursor-pointer">Quem Somos</a>
-                <a href="#faq" class="py-2 border-b-2 border-transparent hover:border-blue-600 hover:text-blue-600 transition">Fale Conosco</a>
+                <a href="https://wa.me/5511953872843" target="_blank" class="py-2 border-b-2 border-transparent hover:border-blue-600 hover:text-blue-600 transition">Fale Conosco</a>
             </nav>
             <div class="flex items-center space-x-2">
                  <a href="https://rwfibra.sgp.tsmx.com.br/accounts/central/login" target="_blank" class="inline-block bg-blue-600 text-white font-bold py-1 px-3 text-xs md:py-2 md:px-5 md:text-sm rounded-full hover:bg-blue-700 transition duration-300 shadow-md">
@@ -459,11 +459,14 @@
             // --- LÓGICA GERAL DA PÁGINA ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    const href = this.getAttribute('href');
+                    // Apenas previne o padrão para links de âncora internos
+                    if (href.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if(targetElement) {
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
                     }
                 });
             });
