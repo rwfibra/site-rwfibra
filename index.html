@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter<', sans-serif;
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             overflow-x: hidden; /* Previne scroll horizontal causado pelas animações */
         }
@@ -161,10 +161,32 @@
             <div class="container mx-auto px-4 md:px-8 text-center">
                  <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Leve a diversão para a sua TV</h2>
                  <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Além da melhor internet, oferecemos um aplicativo de TV com os melhores filmes, séries e canais ao vivo para toda a família.</p>
-                 <button id="btn-conheca-tv" class="mt-8 bg-indigo-600 text-white font-bold text-lg py-4 px-8 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg inline-flex items-center">
+                 <a href="#tv-ao-vivo" class="mt-8 bg-indigo-600 text-white font-bold text-lg py-4 px-8 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-lg inline-flex items-center">
                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17.25v-10.5l8.25 5.25-8.25 5.25z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                     Conheça nossa TV
-                 </button>
+                     Ver Demonstração
+                 </a>
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO DE TV AO VIVO -->
+        <section id="tv-ao-vivo" class="bg-gray-100 pt-8 pb-16 md:pb-24">
+            <div class="container mx-auto px-4 md:px-8">
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Demonstração Ao Vivo</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">Veja um exemplo de um canal ao vivo que você pode assistir com nosso app.</p>
+                </div>
+                <div class="bg-black p-4 md:p-6 rounded-2xl shadow-lg text-center max-w-5xl mx-auto animate-on-scroll" style="--animation-delay: 0.2s;">
+                    <!-- Aspect Ratio Box -->
+                    <div class="relative w-full" style="padding-top: 56.25%;"> <!-- 16:9 Aspect Ratio -->
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg" 
+                                src="https://www.youtube.com/embed/be6N2gB39kc?autoplay=1&mute=1&playsinline=1&loop=1&playlist=be6N2gB39kc" 
+                                title="TV Ao Vivo" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -224,27 +246,6 @@
                 </div>
             </div>
         </section>
-    </div>
-
-    <!-- PÁGINA DE TV (INICIALMENTE OCULTA) -->
-    <div id="pagina-tv" class="hidden">
-        <div class="bg-gray-100 min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-extrabold text-gray-900">Demonstração da Nossa TV</h2>
-                    <p class="mt-2 text-sm text-gray-600">Veja um pouco do que você terá acesso com nosso aplicativo.</p>
-                </div>
-                <div class="bg-white p-4 md:p-8 rounded-2xl shadow-lg text-center">
-                    <video class="w-full max-w-4xl mx-auto rounded-lg shadow-lg" controls autoplay loop muted>
-                        <source src="plano-tv.mp4" type="video/mp4">
-                        Seu navegador não suporta o player de vídeo.
-                    </video>
-                </div>
-                <div class="mt-8 text-center">
-                    <button type="button" class="btn-voltar bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50">Voltar para o Início</button>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- NOVA PÁGINA QUEM SOMOS (INICIALMENTE OCULTA) -->
@@ -341,17 +342,14 @@
 
             // --- LÓGICA DE NAVEGAÇÃO ENTRE PÁGINAS ---
             const paginaPrincipal = document.getElementById('pagina-principal');
-            const paginaTv = document.getElementById('pagina-tv');
             const paginaQuemSomos = document.getElementById('pagina-quem-somos');
             const btnsVoltar = document.querySelectorAll('.btn-voltar');
-            const btnConhecaTv = document.getElementById('btn-conheca-tv');
             const linkQuemSomos = document.getElementById('quem-somos-link');
             const linkLogo = document.getElementById('logo-link');
             const linkHome = document.getElementById('home-link');
 
             const hideAllPages = () => {
                 paginaPrincipal.classList.add('hidden');
-                paginaTv.classList.add('hidden');
                 paginaQuemSomos.classList.add('hidden');
             }
 
@@ -361,12 +359,6 @@
                 window.scrollTo(0, 0);
             };
             
-            const mostrarPaginaTv = () => {
-                hideAllPages();
-                paginaTv.classList.remove('hidden');
-                window.scrollTo(0, 0);
-            }
-
             const mostrarPaginaQuemSomos = (e) => {
                 if(e) e.preventDefault();
                 hideAllPages();
@@ -375,7 +367,6 @@
             }
 
             btnsVoltar.forEach(btn => btn.addEventListener('click', mostrarPrincipal));
-            btnConhecaTv.addEventListener('click', mostrarPaginaTv);
             linkQuemSomos.addEventListener('click', mostrarPaginaQuemSomos);
             linkLogo.addEventListener('click', (e) => { e.preventDefault(); mostrarPrincipal(); });
             linkHome.addEventListener('click', (e) => { e.preventDefault(); mostrarPrincipal(); });
@@ -452,7 +443,7 @@
                     actionClass = 'bg-sky-500 hover:bg-sky-600';
                     actionFn = () => {
                         closeModal();
-                        mostrarPaginaTv();
+                        document.getElementById('tv-ao-vivo').scrollIntoView({ behavior: 'smooth' });
                     };
                 } else { // error
                     iconHtml = `<svg class="w-16 h-16 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
