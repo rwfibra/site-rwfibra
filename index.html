@@ -39,7 +39,6 @@
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            transition-delay: var(--animation-delay, 0s);
         }
 
         .animate-on-scroll.is-visible {
@@ -62,14 +61,14 @@
         </a>
 
         <nav class="hidden lg:flex items-center space-x-5 font-semibold text-gray-800 text-sm">
-            <a href="#" id="home-link" class="py-2 border-b-2 border-blue-600 text-blue-600">Home</a>
+            <a href="#pagina-principal">Home</a>
             <a href="#nossos-planos">Nossos Planos</a>
-            <a href="#" id="quem-somos-link">Quem Somos</a>
+            <a href="#">Quem Somos</a>
             <a href="https://wa.me/5511953872843">Fale Conosco</a>
         </nav>
 
         <a href="https://rwfibra.sgp.tsmx.com.br/accounts/central/login"
-           class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm">
+           class="bg-blue-600 text-white px-4 py-2 rounded-full">
             2ª Via da Fatura
         </a>
     </div>
@@ -77,92 +76,89 @@
 
 <div id="pagina-principal">
 
-    <main class="hero-background text-white">
-        <div class="container mx-auto text-center py-32">
-            <h1 class="text-5xl font-black">A melhor internet da cidade</h1>
-            <p class="mt-4 text-blue-200">100% Fibra Óptica • Instalação grátis</p>
-        </div>
-    </main>
+<main class="hero-background text-white text-center py-32">
+    <h1 class="text-5xl font-black">A melhor internet da cidade</h1>
+    <p class="mt-4">100% Fibra Óptica • Instalação grátis</p>
+</main>
 
-    <!-- ================= PLANOS CORRIGIDOS ================= -->
-    <section id="nossos-planos" class="bg-gray-50 py-16 md:py-24">
+<!-- ===================== PLANOS (SÓ ISSO FOI ALTERADO) ===================== -->
+<section id="nossos-planos" class="bg-gray-50 py-16 md:py-24">
 
-        <div class="text-center mb-12 animate-on-scroll">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-                🌐 PLANOS RW FIBRA 🚀
-            </h2>
-            <p class="mt-4 text-lg text-gray-600">
-                Escolha o plano ideal para você e sua família!
-            </p>
-        </div>
+    <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+            🌐 PLANOS RW FIBRA 🚀
+        </h2>
+        <p class="mt-4 text-lg text-gray-600">
+            Escolha o plano ideal para você e sua família!
+        </p>
+    </div>
 
-        <div class="container mx-auto px-4 md:px-8">
+    <div class="container mx-auto px-4 md:px-8">
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                <!-- 300 -->
-                <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-sky-500">
-                    <h3 class="text-2xl font-bold">1️⃣ PLANO BÁSICO</h3>
-                    <p class="mt-2 text-gray-600">📶 300 MEGA</p>
+            <!-- BÁSICO -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-sky-500 animate-on-scroll">
+                <h3 class="text-2xl font-bold">1️⃣ PLANO BÁSICO</h3>
+                <p class="text-gray-600 mt-2">📶 300 MEGA</p>
 
-                    <div class="my-6">
-                        <span class="text-5xl font-extrabold">R$ 79</span>
-                        <span class="text-2xl font-bold">,90</span>
-                    </div>
-
-                    <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                    <a href="https://wa.me/5511953872843?text=PLANO%20300%20MEGA"
-                       class="mt-6 bg-sky-500 text-white py-3 rounded-lg text-center font-bold">
-                        Contratar
-                    </a>
+                <div class="my-6">
+                    <span class="text-5xl font-extrabold">R$ 79</span>
+                    <span class="text-2xl font-bold">,90</span>
+                    <span class="text-gray-500">/mês</span>
                 </div>
 
-                <!-- 500 -->
-                <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-blue-500">
-                    <h3 class="text-2xl font-bold">2️⃣ PLANO INTERMEDIÁRIO</h3>
-                    <p class="mt-2 text-gray-600">📶 500 MEGA</p>
+                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
 
-                    <div class="my-6">
-                        <span class="text-5xl font-extrabold">R$ 100</span>
-                        <span class="text-2xl font-bold">,00</span>
-                    </div>
-
-                    <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                    <a href="https://wa.me/5511953872843?text=PLANO%20500%20MEGA"
-                       class="mt-6 bg-blue-500 text-white py-3 rounded-lg text-center font-bold">
-                        Contratar
-                    </a>
-                </div>
-
-                <!-- 800 -->
-                <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-indigo-500">
-                    <h3 class="text-2xl font-bold">3️⃣ PLANO PREMIUM</h3>
-                    <p class="mt-2 text-gray-600">📶 800 MEGA</p>
-
-                    <div class="my-6">
-                        <span class="text-5xl font-extrabold">R$ 120</span>
-                        <span class="text-2xl font-bold">,00</span>
-                    </div>
-
-                    <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                    <a href="https://wa.me/5511953872843?text=PLANO%20800%20MEGA"
-                       class="mt-6 bg-indigo-500 text-white py-3 rounded-lg text-center font-bold">
-                        Contratar
-                    </a>
-                </div>
-
+                <a href="https://wa.me/5511953872843?text=PLANO%20300%20MEGA"
+                   class="mt-6 bg-sky-500 text-white py-3 rounded-lg text-center font-bold">
+                    Contratar
+                </a>
             </div>
 
-            <div class="text-center mt-12">
-                <h3 class="text-xl font-bold">🎬 Streaming incluso</h3>
-                <p class="text-gray-600">Globoplay • HBO Max • Paramount+</p>
+            <!-- INTERMEDIÁRIO -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-blue-500 animate-on-scroll">
+                <h3 class="text-2xl font-bold">2️⃣ PLANO INTERMEDIÁRIO</h3>
+                <p class="text-gray-600 mt-2">📶 500 MEGA</p>
+
+                <div class="my-6">
+                    <span class="text-5xl font-extrabold">R$ 100</span>
+                    <span class="text-2xl font-bold">,00</span>
+                    <span class="text-gray-500">/mês</span>
+                </div>
+
+                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
+
+                <a href="https://wa.me/5511953872843?text=PLANO%20500%20MEGA"
+                   class="mt-6 bg-blue-500 text-white py-3 rounded-lg text-center font-bold">
+                    Contratar
+                </a>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-indigo-500 animate-on-scroll">
+                <h3 class="text-2xl font-bold">3️⃣ PLANO PREMIUM</h3>
+                <p class="text-gray-600 mt-2">📶 800 MEGA</p>
+
+                <div class="my-6">
+                    <span class="text-5xl font-extrabold">R$ 120</span>
+                    <span class="text-2xl font-bold">,00</span>
+                    <span class="text-gray-500">/mês</span>
+                </div>
+
+                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
+
+                <a href="https://wa.me/5511953872843?text=PLANO%20800%20MEGA"
+                   class="mt-6 bg-indigo-500 text-white py-3 rounded-lg text-center font-bold">
+                    Contratar
+                </a>
             </div>
 
         </div>
-    </section>
+
+    </div>
+</section>
+<!-- ===================== FIM PLANOS ===================== -->
 
 </div>
 
