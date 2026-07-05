@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="facebook-domain-verification" content="y8iv8dssgpz92hmfhb2b0qz3svh2d" />
     <title>RW Fibra</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,21 +18,30 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
+
         .hero-background {
             background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.png');
             background-size: cover;
             background-position: center;
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
+
+        .modal-backdrop {
+            transition: opacity 0.3s ease;
+        }
+
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: 0.6s ease-out;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition-delay: var(--animation-delay, 0s);
         }
+
         .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
@@ -42,104 +53,121 @@
 
 <header class="bg-white shadow-md sticky top-0 z-40">
     <div class="container mx-auto flex justify-between items-center p-4">
-        <div class="text-3xl font-extrabold text-sky-500">RW FIBRA</div>
-        <a href="https://wa.me/5511953872843" class="bg-blue-600 text-white px-4 py-2 rounded-full">
-            Fale Conosco
+        <a href="#" id="logo-link">
+            <div class="text-2xl font-bold text-blue-600">RW FIBRA</div>
+        </a>
+
+        <a href="https://wa.me/5511953872843" class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+            Assine Já
         </a>
     </div>
 </header>
 
-<main class="hero-background text-white text-center py-32">
-    <h1 class="text-5xl font-black">A melhor internet da cidade</h1>
-    <p class="mt-4">100% Fibra Óptica • Instalação grátis</p>
-</main>
+<div id="pagina-principal">
 
-<!-- ===================== PLANOS ALTERADOS ===================== -->
-<section id="nossos-planos" class="bg-gray-50 py-16 md:py-24">
+    <section id="nossos-planos" class="p-10">
 
-    <div class="text-center mb-12 animate-on-scroll">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
-            🌐 PLANOS RW FIBRA 🚀
-        </h2>
-        <p class="mt-4 text-lg text-gray-600">
-            Escolha o plano ideal para você e sua família!
-        </p>
-    </div>
+        <h2 class="text-3xl font-bold text-center mb-10">Planos RW Fibra</h2>
 
-    <div class="container mx-auto px-4 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-6">
 
-            <!-- BÁSICO -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-sky-500 animate-on-scroll">
-                <h3 class="text-2xl font-bold">1️⃣ PLANO BÁSICO</h3>
-                <p class="mt-2 text-gray-600">📶 300 MEGA</p>
-
-                <div class="my-6">
-                    <span class="text-5xl font-extrabold">R$ 79</span>
-                    <span class="text-2xl font-bold">,90</span>
-                    <span class="text-gray-500">/mês</span>
-                </div>
-
-                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20BÁSICO%20300%20MEGA"
-                   class="mt-6 bg-sky-500 text-white font-bold py-3 rounded-lg text-center hover:bg-sky-600">
-                    Contratar
-                </a>
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h3 class="text-xl font-bold">300 MEGA</h3>
+                <p>R$ 79,90/mês</p>
+                <a class="bg-blue-500 text-white block mt-4 p-2 rounded" href="#">Contratar</a>
             </div>
 
-            <!-- INTERMEDIÁRIO -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-blue-500 animate-on-scroll">
-                <h3 class="text-2xl font-bold">2️⃣ PLANO INTERMEDIÁRIO</h3>
-                <p class="mt-2 text-gray-600">📶 500 MEGA</p>
-
-                <div class="my-6">
-                    <span class="text-5xl font-extrabold">R$ 100</span>
-                    <span class="text-2xl font-bold">,00</span>
-                    <span class="text-gray-500">/mês</span>
-                </div>
-
-                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20INTERMEDIÁRIO%20500%20MEGA"
-                   class="mt-6 bg-blue-500 text-white font-bold py-3 rounded-lg text-center hover:bg-blue-600">
-                    Contratar
-                </a>
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h3 class="text-xl font-bold">500 MEGA</h3>
+                <p>R$ 100,00/mês</p>
+                <a class="bg-blue-500 text-white block mt-4 p-2 rounded" href="#">Contratar</a>
             </div>
 
-            <!-- PREMIUM -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-indigo-500 animate-on-scroll">
-                <h3 class="text-2xl font-bold">3️⃣ PLANO PREMIUM</h3>
-                <p class="mt-2 text-gray-600">📶 800 MEGA</p>
-
-                <div class="my-6">
-                    <span class="text-5xl font-extrabold">R$ 120</span>
-                    <span class="text-2xl font-bold">,00</span>
-                    <span class="text-gray-500">/mês</span>
-                </div>
-
-                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20PREMIUM%20800%20MEGA"
-                   class="mt-6 bg-indigo-500 text-white font-bold py-3 rounded-lg text-center hover:bg-indigo-600">
-                    Contratar
-                </a>
+            <div class="bg-white p-6 rounded-xl shadow">
+                <h3 class="text-xl font-bold">800 MEGA</h3>
+                <p>R$ 120,00/mês</p>
+                <a class="bg-blue-500 text-white block mt-4 p-2 rounded" href="#">Contratar</a>
             </div>
 
         </div>
 
-        <div class="text-center mt-12">
-            <h3 class="text-xl font-bold">🎬 Escolha seu streaming grátis:</h3>
-            <p class="text-gray-600 mt-2">▶️ Globoplay • HBO Max • Paramount+</p>
-        </div>
+    </section>
+
+</div>
+
+<!-- MODAL -->
+<div id="cobertura-modal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-xl w-96">
+
+        <h3 id="modal-title" class="text-xl font-bold mb-2"></h3>
+        <p id="modal-message" class="text-gray-600 mb-4"></p>
+
+        <button id="modal-action-btn" class="w-full p-3 rounded bg-blue-600 text-white"></button>
+
+        <button id="modal-close-btn" class="mt-3 w-full p-2 bg-gray-300 rounded">Fechar</button>
+
     </div>
+</div>
 
-</section>
-<!-- ===================== FIM PLANOS ===================== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-<footer class="text-center p-6 bg-blue-900 text-white">
-    © 2026 RW Fibra
-</footer>
+    const modal = document.getElementById('cobertura-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalMessage = document.getElementById('modal-message');
+    const modalBtn = document.getElementById('modal-action-btn');
+
+    const cepsAtendidos = ["03382070","03382150","03388000"];
+
+    function showResult(type, cep) {
+
+        if(type === 'success') {
+            modalTitle.textContent = "Ótima notícia!";
+            modalMessage.textContent = `Atendemos no CEP ${cep}`;
+            modalBtn.textContent = "Ver planos";
+
+            modalBtn.onclick = () => {
+                modal.classList.add('hidden');
+                document.getElementById('nossos-planos')
+                    .scrollIntoView({ behavior: 'smooth' });
+            };
+
+        } else if(type === 'offer_tv') {
+            modalTitle.textContent = "Quase lá!";
+            modalMessage.textContent = `Não temos fibra no CEP ${cep}`;
+            modalBtn.textContent = "Ver TV";
+            modalBtn.onclick = () => modal.classList.add('hidden');
+
+        } else if(type === 'error') {
+            modalTitle.textContent = "CEP inválido";
+            modalMessage.textContent = "Digite exatamente 8 números";
+            modalBtn.textContent = "Tentar novamente";
+            modalBtn.onclick = () => modal.classList.add('hidden');
+        }
+
+        modal.classList.remove('hidden');
+    }
+
+    // exemplo botão teste
+    window.verificarCep = () => {
+        const cep = "0000000";
+
+        if(cep.length !== 8) {
+            showResult('error');
+            return;
+        }
+
+        cepsAtendidos.includes(cep)
+            ? showResult('success', cep)
+            : showResult('offer_tv', cep);
+    };
+
+    document.getElementById('modal-close-btn').onclick = () => {
+        modal.classList.add('hidden');
+    };
+
+});
+</script>
 
 </body>
 </html>
