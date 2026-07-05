@@ -3,113 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="facebook-domain-verification" content="y8iv8dssgpz92hmfhb2b0qz3svh2d" />
     <title>RW Fibra</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        .hero-background {
+            background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.png');
+            background-size: cover;
+            background-position: center;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.6s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 
 <body class="bg-gray-100">
 
-<!-- HEADER -->
-<header class="bg-white shadow-md p-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-sky-600">RW FIBRA</h1>
-    <a href="https://wa.me/5511953872843" class="text-sm bg-sky-600 text-white px-4 py-2 rounded-lg">
-        Fale Conosco
-    </a>
+<header class="bg-white shadow-md sticky top-0 z-40">
+    <div class="container mx-auto flex justify-between items-center p-4">
+        <div class="text-3xl font-extrabold text-sky-500">RW FIBRA</div>
+        <a href="https://wa.me/5511953872843" class="bg-blue-600 text-white px-4 py-2 rounded-full">
+            Fale Conosco
+        </a>
+    </div>
 </header>
 
-<!-- HERO -->
-<section class="text-center py-20 bg-sky-700 text-white">
-    <h1 class="text-4xl font-bold">A melhor internet da cidade</h1>
-    <p class="mt-3">100% Fibra Óptica • Instalação grátis • Suporte rápido</p>
+<main class="hero-background text-white text-center py-32">
+    <h1 class="text-5xl font-black">A melhor internet da cidade</h1>
+    <p class="mt-4">100% Fibra Óptica • Instalação grátis</p>
+</main>
+
+<!-- ===================== PLANOS ALTERADOS ===================== -->
+<section id="nossos-planos" class="bg-gray-50 py-16 md:py-24">
+
+    <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">
+            🌐 PLANOS RW FIBRA 🚀
+        </h2>
+        <p class="mt-4 text-lg text-gray-600">
+            Escolha o plano ideal para você e sua família!
+        </p>
+    </div>
+
+    <div class="container mx-auto px-4 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- BÁSICO -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-sky-500 animate-on-scroll">
+                <h3 class="text-2xl font-bold">1️⃣ PLANO BÁSICO</h3>
+                <p class="mt-2 text-gray-600">📶 300 MEGA</p>
+
+                <div class="my-6">
+                    <span class="text-5xl font-extrabold">R$ 79</span>
+                    <span class="text-2xl font-bold">,90</span>
+                    <span class="text-gray-500">/mês</span>
+                </div>
+
+                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
+
+                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20BÁSICO%20300%20MEGA"
+                   class="mt-6 bg-sky-500 text-white font-bold py-3 rounded-lg text-center hover:bg-sky-600">
+                    Contratar
+                </a>
+            </div>
+
+            <!-- INTERMEDIÁRIO -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-blue-500 animate-on-scroll">
+                <h3 class="text-2xl font-bold">2️⃣ PLANO INTERMEDIÁRIO</h3>
+                <p class="mt-2 text-gray-600">📶 500 MEGA</p>
+
+                <div class="my-6">
+                    <span class="text-5xl font-extrabold">R$ 100</span>
+                    <span class="text-2xl font-bold">,00</span>
+                    <span class="text-gray-500">/mês</span>
+                </div>
+
+                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
+
+                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20INTERMEDIÁRIO%20500%20MEGA"
+                   class="mt-6 bg-blue-500 text-white font-bold py-3 rounded-lg text-center hover:bg-blue-600">
+                    Contratar
+                </a>
+            </div>
+
+            <!-- PREMIUM -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-indigo-500 animate-on-scroll">
+                <h3 class="text-2xl font-bold">3️⃣ PLANO PREMIUM</h3>
+                <p class="mt-2 text-gray-600">📶 800 MEGA</p>
+
+                <div class="my-6">
+                    <span class="text-5xl font-extrabold">R$ 120</span>
+                    <span class="text-2xl font-bold">,00</span>
+                    <span class="text-gray-500">/mês</span>
+                </div>
+
+                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
+
+                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20PREMIUM%20800%20MEGA"
+                   class="mt-6 bg-indigo-500 text-white font-bold py-3 rounded-lg text-center hover:bg-indigo-600">
+                    Contratar
+                </a>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+            <h3 class="text-xl font-bold">🎬 Escolha seu streaming grátis:</h3>
+            <p class="text-gray-600 mt-2">▶️ Globoplay • HBO Max • Paramount+</p>
+        </div>
+    </div>
+
 </section>
+<!-- ===================== FIM PLANOS ===================== -->
 
-<!-- PLANOS -->
-<section id="nossos-planos" class="bg-gray-50 py-16">
-
-    <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold">🌐 PLANOS RW FIBRA 🚀</h2>
-        <p class="text-gray-600 mt-2">Escolha o plano ideal para você e sua família!</p>
-    </div>
-
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-
-        <!-- BÁSICO -->
-        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-sky-500">
-            <h3 class="text-xl font-bold">1️⃣ PLANO BÁSICO</h3>
-            <p class="mt-2 text-gray-600">📶 300 MEGA</p>
-
-            <div class="my-6">
-                <span class="text-4xl font-bold">R$ 79</span>
-                <span class="text-xl font-bold">,90</span>
-                <p class="text-gray-500">/mês</p>
-            </div>
-
-            <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-            <a href="https://wa.me/5511953872843?text=Olá!%20Quero%20o%20PLANO%20BÁSICO%20300%20MEGA"
-               class="mt-6 block bg-sky-600 text-white text-center py-2 rounded-lg font-bold">
-               Contratar
-            </a>
-        </div>
-
-        <!-- INTERMEDIÁRIO -->
-        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-blue-500">
-            <h3 class="text-xl font-bold">2️⃣ PLANO INTERMEDIÁRIO</h3>
-            <p class="mt-2 text-gray-600">📶 500 MEGA</p>
-
-            <div class="my-6">
-                <span class="text-4xl font-bold">R$ 100</span>
-                <span class="text-xl font-bold">,00</span>
-                <p class="text-gray-500">/mês</p>
-            </div>
-
-            <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-            <a href="https://wa.me/5511953872843?text=Olá!%20Quero%20o%20PLANO%20INTERMEDIÁRIO%20500%20MEGA"
-               class="mt-6 block bg-blue-600 text-white text-center py-2 rounded-lg font-bold">
-               Contratar
-            </a>
-        </div>
-
-        <!-- PREMIUM -->
-        <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500">
-            <h3 class="text-xl font-bold">3️⃣ PLANO PREMIUM</h3>
-            <p class="mt-2 text-gray-600">📶 800 MEGA</p>
-
-            <div class="my-6">
-                <span class="text-4xl font-bold">R$ 120</span>
-                <span class="text-xl font-bold">,00</span>
-                <p class="text-gray-500">/mês</p>
-            </div>
-
-            <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-            <a href="https://wa.me/5511953872843?text=Olá!%20Quero%20o%20PLANO%20PREMIUM%20800%20MEGA"
-               class="mt-6 block bg-indigo-600 text-white text-center py-2 rounded-lg font-bold">
-               Contratar
-            </a>
-        </div>
-
-    </div>
-
-    <!-- STREAMING -->
-    <div class="text-center mt-12">
-        <h3 class="text-xl font-bold">🎬 Escolha seu streaming grátis:</h3>
-        <p class="text-gray-600 mt-2">▶️ Globoplay • HBO Max • Paramount+</p>
-    </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="text-center p-6 bg-gray-900 text-white mt-10">
-    © 2026 RW Fibra - Todos os direitos reservados
+<footer class="text-center p-6 bg-blue-900 text-white">
+    © 2026 RW Fibra
 </footer>
 
 </body>
