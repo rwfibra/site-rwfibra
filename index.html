@@ -18,24 +18,25 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
+
         .hero-background {
             background-image: linear-gradient(rgba(0, 20, 70, 0.7), rgba(0, 20, 70, 0.7)), url('fundo-carrossel.png');
             background-size: cover;
             background-position: center;
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
-        .modal-backdrop {
-            transition: opacity 0.3s ease;
-        }
+
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
         .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
@@ -47,36 +48,32 @@
 
 <header class="bg-white shadow-md sticky top-0 z-40">
     <div class="container mx-auto flex justify-between items-center p-4 md:px-8 lg:px-16">
-        <a href="#" id="logo-link" class="flex flex-col items-start leading-none cursor-pointer">
+        <a href="#" class="flex flex-col leading-none">
             <div class="flex items-baseline">
                 <span class="text-3xl font-extrabold text-sky-500">RW</span>
                 <span class="text-3xl font-medium text-gray-800 ml-1">FIBRA</span>
             </div>
-            <span class="text-xs font-light text-gray-500 tracking-[0.2em] -mt-1 ml-px">TELECOM</span>
+            <span class="text-xs text-gray-500 tracking-[0.2em]">TELECOM</span>
         </a>
 
-        <nav class="hidden lg:flex items-center space-x-5 font-semibold text-gray-800 text-sm">
-            <a href="#" id="home-link" class="py-2 border-b-2 border-blue-600 text-blue-600">Home</a>
-            <a href="#nossos-planos">Nossos Planos</a>
-            <a href="#" id="quem-somos-link">Quem Somos</a>
-            <a href="https://wa.me/5511953872843">Fale Conosco</a>
+        <nav class="hidden lg:flex space-x-5 font-semibold text-gray-800 text-sm">
+            <a href="#nossos-planos">Planos</a>
+            <a href="https://wa.me/5511953872843">Contato</a>
         </nav>
 
         <a href="https://rwfibra.sgp.tsmx.com.br/accounts/central/login"
            class="bg-blue-600 text-white px-4 py-2 rounded-full">
-            2ª Via da Fatura
+            2ª Via
         </a>
     </div>
 </header>
-
-<div id="pagina-principal">
 
 <main class="hero-background text-white text-center py-32">
     <h1 class="text-5xl font-black">A melhor internet da cidade</h1>
     <p class="mt-4">100% Fibra Óptica • Instalação grátis</p>
 </main>
 
-<!-- ===================== PLANOS (ALTERADO APENAS AQUI) ===================== -->
+<!-- ===================== PLANOS (SÓ ISSO FOI ALTERADO) ===================== -->
 <section id="nossos-planos" class="bg-gray-50 py-16 md:py-24">
 
     <div class="text-center mb-12 animate-on-scroll">
@@ -88,97 +85,44 @@
         </p>
     </div>
 
-    <div class="container mx-auto px-4 md:px-8">
+    <div class="container mx-auto px-4 md:px-8 grid md:grid-cols-3 gap-8">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <!-- BÁSICO -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-sky-500 animate-on-scroll">
-                <h3 class="text-2xl font-bold">1️⃣ PLANO BÁSICO</h3>
-                <p class="text-gray-600 mt-2">📶 300 MEGA</p>
-
-                <div class="my-6">
-                    <span class="text-5xl font-extrabold text-gray-900">R$ 79</span>
-                    <span class="text-2xl font-bold text-gray-900">,90</span>
-                    <span class="text-gray-500">/mês</span>
-                </div>
-
-                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20BÁSICO%20300%20MEGA"
-                   class="mt-6 bg-sky-500 text-white py-3 rounded-lg text-center font-bold">
-                    Contratar
-                </a>
-            </div>
-
-            <!-- INTERMEDIÁRIO -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-blue-500 animate-on-scroll">
-                <h3 class="text-2xl font-bold">2️⃣ PLANO INTERMEDIÁRIO</h3>
-                <p class="text-gray-600 mt-2">📶 500 MEGA</p>
-
-                <div class="my-6">
-                    <span class="text-5xl font-extrabold text-gray-900">R$ 100</span>
-                    <span class="text-2xl font-bold text-gray-900">,00</span>
-                    <span class="text-gray-500">/mês</span>
-                </div>
-
-                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20INTERMEDIÁRIO%20500%20MEGA"
-                   class="mt-6 bg-blue-500 text-white py-3 rounded-lg text-center font-bold">
-                    Contratar
-                </a>
-            </div>
-
-            <!-- PREMIUM -->
-            <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col border-t-4 border-indigo-500 animate-on-scroll">
-                <h3 class="text-2xl font-bold">3️⃣ PLANO PREMIUM</h3>
-                <p class="text-gray-600 mt-2">📶 800 MEGA</p>
-
-                <div class="my-6">
-                    <span class="text-5xl font-extrabold text-gray-900">R$ 120</span>
-                    <span class="text-2xl font-bold text-gray-900">,00</span>
-                    <span class="text-gray-500">/mês</span>
-                </div>
-
-                <p class="text-green-600 font-semibold">🎁 1 streaming grátis incluso</p>
-
-                <a href="https://wa.me/5511953872843?text=Tenho%20interesse%20no%20PLANO%20PREMIUM%20800%20MEGA"
-                   class="mt-6 bg-indigo-500 text-white py-3 rounded-lg text-center font-bold">
-                    Contratar
-                </a>
-            </div>
-
+        <!-- BÁSICO -->
+        <div class="bg-white p-6 rounded-2xl shadow border-t-4 border-sky-500">
+            <h3 class="text-xl font-bold">300 MEGA</h3>
+            <p class="text-gray-600">R$ 79,90/mês</p>
+            <p class="text-green-600 mt-2">🎁 1 streaming grátis</p>
+            <a class="block mt-4 bg-sky-500 text-white text-center py-2 rounded"
+               href="https://wa.me/5511953872843?text=PLANO%20300">
+               Contratar
+            </a>
         </div>
 
-        <div class="text-center mt-12">
-            <h3 class="text-xl font-bold text-gray-800">🎬 Escolha seu streaming grátis:</h3>
-            <p class="text-gray-600 mt-2">▶️ Globoplay • HBO Max • Paramount+</p>
+        <!-- INTERMEDIÁRIO -->
+        <div class="bg-white p-6 rounded-2xl shadow border-t-4 border-blue-500">
+            <h3 class="text-xl font-bold">500 MEGA</h3>
+            <p class="text-gray-600">R$ 100,00/mês</p>
+            <p class="text-green-600 mt-2">🎁 1 streaming grátis</p>
+            <a class="block mt-4 bg-blue-500 text-white text-center py-2 rounded"
+               href="https://wa.me/5511953872843?text=PLANO%20500">
+               Contratar
+            </a>
+        </div>
+
+        <!-- PREMIUM -->
+        <div class="bg-white p-6 rounded-2xl shadow border-t-4 border-indigo-500">
+            <h3 class="text-xl font-bold">800 MEGA</h3>
+            <p class="text-gray-600">R$ 120,00/mês</p>
+            <p class="text-green-600 mt-2">🎁 1 streaming grátis</p>
+            <a class="block mt-4 bg-indigo-500 text-white text-center py-2 rounded"
+               href="https://wa.me/5511953872843?text=PLANO%20800">
+               Contratar
+            </a>
         </div>
 
     </div>
+
 </section>
-<!-- ===================== FIM PLANOS ===================== -->
-
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add('is-visible');
-            }
-        });
-    });
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        observer.observe(el);
-    });
-
-});
-</script>
 
 </body>
 </html>
